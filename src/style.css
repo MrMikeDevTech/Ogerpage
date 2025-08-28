@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+    /* que baje 45rem mas de scroll para que el header no tape el texto del auto scroll */
+    scroll-padding-top: 5rem;
+}
+
+.ogerpon {
+    width: 50px;
+    height: 50px;
+    background: url("/gifs/ogerpons.gif");
+    background-size: 100px 100px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.ogerpon:hover {
+    animation: jump 0.5s ease;
+    animation-fill-mode: forwards;
+}
+
+.ogerpon.teal {
+    background-position: 0 0;
+}
+.ogerpon.wellspring {
+    background-position: -50px 0;
+}
+.ogerpon.heartflame {
+    background-position: 0 -50px;
+}
+.ogerpon.comerstone {
+    background-position: -50px -50px;
+}
+
+.kitakami {
+    background-image: url("/bg/kitakami.webp");
+    background-size: cover;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(-5rem);
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes oscillate {
+    0% {
+        transform: rotate(-2.5deg);
+    }
+    50% {
+        transform: rotate(2.5deg);
+    }
+    100% {
+        transform: rotate(-2.5deg);
+    }
+}
+
+.animate-oscillate:hover {
+    animation: oscillate 1s infinite ease-in-out;
+}
